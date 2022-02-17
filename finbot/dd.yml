@@ -1,0 +1,233 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 180
+  carry_over_slots_to_new_session: true
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+  - out_of_scope
+  - thankyou
+  - inform
+  - inform_name
+  - greet_db
+  - update_values
+  - user_terminate
+  - utter_out_of_scope
+  - life
+  - health
+
+entities:
+- name
+
+slots:
+  name:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  age:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  retirement_age:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  existing_savings:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  existing_loan:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  expected_rate_of_return:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  existing_insurance_cover:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  employement_status:
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  annual_income:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  marital_status:
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  number_of_dependents:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  confirm_data_retreived:
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  hvlScore:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  hvlCategory:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  suggestion:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  zip_code:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  disease_history:
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false      
+  present_major_illness:
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  present_major_treatment:
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  tobacco_consumption:
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+
+responses:
+  utter_greet:
+    - text: Hey! this is your financial bot. I'll first try to fetch your data if available on the database, if not i'll ask you for the details
+  utter_did_that_help:
+    - text: Did that help you?
+  utter_goodbye:
+    - text: Bye
+  utter_iamabot:
+    - text: I am a financial bot
+  utter_no_worries:
+    - text: No problem :)
+  utter_ask_continue:
+    - text: Sorry, I don't quite understand. Do you want to continue?
+  utter_out_of_scope:
+    - text: I didn't quite get that could you put it more precisely. You see i am a bot, if you want to consust with the human follow the link https://www.youtube.com/watch?v=Ap-HeMIKi-c
+  utter_ask_age:
+    - text: How old are you?
+  utter_ask_employement_status:
+    - text: Do you presently work at some place?
+  utter_ask_annual_income:
+    - text: What is your approximate annual income?
+  utter_ask_retirement_age:
+    - text: At what age do you plan to retire?
+  utter_ask_existing_savings:
+    - text: What is your approximate savings? (Enter 0 if None)
+  utter_ask_existing_loan:
+    - text: What is your approximate existing loan amount? (Enter 0 if None)
+  utter_ask_expected_rate_of_return:
+    - text: What is your expected rate of return % ? (Enter 0 if None)
+  utter_ask_existing_insurance_cover:
+    - text: What is your existing insureance cover? (Enter 0 if None)
+  utter_ask_marital_status:
+    - text: Are you married?
+  utter_ask_number_of_dependents:
+    - text: How many people are dependent on you? Eg- Kids, Parents etc.
+  utter_slots_value:
+    - text: |
+        "HLV Score: {hvlScore}\n
+        HLV Category: {hvlCategory}"
+  utter_user_update:
+    - text: you have decided to update your data
+  utter_user_terminate:
+    - text:
+        You have decided to end the process. Thanks for using us.
+        To restart enter Hi.
+  utter_ask_zip_code:
+    - text: Please enter your zip code.
+  utter_ask_disease_history:   
+    - text: Do you have a diesease history(yes/no)?   
+  utter_ask_present_major_illness:
+    - text: Do you have any major illness presently(yes/no)?
+  utter_ask_present_major_treatment:
+    - text: Are you undergoing any medical treatment(yes/no)?
+  utter_ask_tobacco_consumption:
+    - text: Do you consume tobacco(yes/no)?
+
+actions:
+- action_send_carousel
+- action_life_regexandstore_slots
+- action_life_get_user_data
+- action_life_calc_suggest_hvl
+- validate_life_client_life_info_form
+- action_life_update_slots
+- action_life_utter_policy_suggestion
+- action_health_regexandstore_slots
+- action_health_get_user_data
+- action_health_calc_suggest_hvl
+- validate_health_client_life_info_form
+- action_health_update_slots
+- action_health_utter_policy_suggestion
+
+forms:
+  client_health_info_form:
+    required_slots:
+      zip_code:
+      - intent: inform  
+        type:  from_text
+      disease_history:
+      - intent: affirm
+        type: from_intent
+        value: true
+      - intent: deny
+        type: from_intent
+        value: false
+      present_major_illness:
+      - intent: affirm
+        type: from_intent
+        value: true
+      - intent: deny
+        type: from_intent
+        value: false
+      present_major_treatment:
+      - intent: affirm
+        type: from_intent
+        value: true
+      - intent: deny
+        type: from_intent
+      tobacco_consumption:
+      - intent: affirm
+        type: from_intent
+        value: true
+      - intent: deny
+        type: from_intent
+e2e_actions: []

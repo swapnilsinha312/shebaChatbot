@@ -1,0 +1,62 @@
+version: "2.0"
+
+stories:
+- story: greetings
+  steps:
+  - intent: greet
+  - action: action_send_base_carousel
+- story: Thank you, end and reset
+  steps:
+  - intent: thankyou
+  - action: utter_goodbye
+  - action: action_restart
+
+
+# - story: starts with name
+#   steps:
+#   - intent: inform_name
+#   - action: utter_confirm_proceed
+# - action_life_regexandstore_slots
+# - action_life_get_user_data
+# - action_life_calc_suggest_hvl
+# - validate_life_client_life_info_form
+# - action_life_update_slots
+# - action_life_utter_policy_suggestion
+
+# - story: Sad Path 1 - Retry
+#   steps:
+#   - intent: affirm
+#   - action: client_life_info_form
+#   - active_loop: client_life_info_form
+#   - intent: out_of_scope
+#   - intent: utter_out_of_scope
+#   - action: utter_ask_continue
+#   - intent: affirm
+#   - action: client_life_info_form
+#   - active_loop: null
+#   - action: action_life_regexandstore_slots 
+#   - action: action_life_next_action
+
+# - story: Sad Path 2 - Stop
+#   steps:
+#   - intent: affirm
+#   - action: client_life_info_form
+#   - active_loop: client_life_info_form
+#   - intent: out_of_scope
+#   - action: utter_out_of_scope
+#   - action: utter_ask_continue
+#   - intent: deny
+#   - action: action_deactivate_loop ##
+#   - active_loop: null
+#   - action: action_life_regexandstore_slots
+#   - action: utter_no_worries
+#   - action: utter_goodbye
+#   - action: action_restart
+
+
+# - story: update values
+#   steps:
+#   - intent: update_values
+#   - action: utter_user_update
+#   - action: action_life_update_slots
+#   - active_loop: client_life_info_form

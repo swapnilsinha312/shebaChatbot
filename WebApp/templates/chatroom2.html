@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      
+      </head>
+     
+      <body  style="float: right; width:35%;  background-color: rgb(10, 50, 85);">
+        <div class="chat-container">
+          <div id="rasa-chat-widget" data-websocket-url=" http://localhost:5005"></div>
+          <script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript"></script>
+        </div>
+        <br> 
+        <button style="  text-align:center; padding:5px; border-radius: 10px; background-color: black; ">
+          <a style=" text-decoration: none; color: white;" href="{% url 'log' %}" class="ml-2">Logout</a>
+        </button>
+        
+      </body>
+</html>

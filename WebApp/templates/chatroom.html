@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{% static 'style.css' %}" />
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+      </head>
+      <script>
+        function bgColor(name,color)
+          {  
+            let aa= document.getElementsByClassName(name);
+            console.log(aa);
+            let a= aa.getElementByTagName("li");
+            for(let i=0;i<a.length;i++)
+            {
+              console.log(a[i].innerHTML);
+              a[i].style.backgroundColor=color;
+            }
+          }
+
+          function textColor(name,color)
+          {  
+            aa= document.getElementsByClassName(name);
+            a= aa.getElementByTagName("li");
+            for(let i=0;i<a.length;i++)
+            {
+              console.log(a[i].innerHTML);
+              a[i].style.color=color;
+            }
+          }
+      </script> 
+     
+      <body  style="float: right; width:35%;  background-color: rgb(10, 50, 85);">
+        <div class="chat-container">
+            
+     <script src="https://npm-scalableminds.s3.eu-central-1.amazonaws.com/@scalableminds/chatroom@master/dist/Chatroom.js"/></script>
+     
+     
+     <script type="text/javascript">
+          var chatroom = new window.Chatroom({
+            host: "http://localhost:5005",
+            title: "Sheba Chat",
+            container: document.querySelector(".chat-container"),
+            welcomeMessage: "Hi, I am Sheba. Start by saying Hi",
+            metadata:{"senderid":"1234"},
+            speechRecognition: "en-US",
+            voiceLang: "en-US"
+          });
+          chatroom.openChat();
+
+          
+          // textColor("text","rgb(255,255,255)");
+          // bgColor("text","rgb(0,101,224); ");
+
+
+        </script>
+        </div>
+        <br> 
+        <button style="  text-align:center; padding:5px; border-radius: 10px; background-color: black; ">
+          <a style=" text-decoration: none; color: white;" href="{% url 'log' %}" class="ml-2">Logout</a>
+        </button>
+        
+      </body>
+</html>

@@ -1,0 +1,192 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en"> 
+  <head><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"></head>
+  <body style=" max-width:100%; background-image: url('https://cdn.discordapp.com/attachments/868509866803752990/898184435768389652/6.jpg'); background-repeat: no-repeat;background-size: cover;">
+      <style>
+        /* .rw-conversation-container .rw-messages-container {width: 100%; height:100%;}
+        .rw-conversation-container {width: 30%; height:90%;} */
+        .rw-conversation-container .rw-messages-container .rw-message .rw-client{ background-color: rgb(35, 35, 250); }
+        .rw-conversation-container .rw-messages-container .rw-message .rw-response{color:white; background-color: rgb(70, 149, 252);}
+        .rw-conversation-container .rw-header  {color:rgb(255, 255, 255);  background-color: rgba(14, 12, 12, 0.767);}
+        .rw-conversation-container .rw-sender {background-color: rgb(202, 198, 198); }
+        .rw-conversation-container .rw-sender .rw-send {background-color:rgb(202, 198, 198); }
+        .rw-conversation-container .rw-sender .rw-new-message {background-color: rgb(202, 198, 198); } 
+        .rw-message .rw-with-avatar {width:100px; width:100p;}
+        .rw-conversation-container .rw-messages-container .rw-message .rw-with-avatar{width:100px; width:100p; }
+        .navbar{
+  margin-left: 200px;
+  display: flex;
+  position:fixed;
+  width: 1200px;
+  height: 50px;
+  /* opacity: 1; */
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px #000000;
+
+
+}
+
+          .ull {
+            list-style-type: none;
+            margin-bottom: 10px;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgb(16, 0, 75);
+          }
+
+          li {
+            float: left;
+          }
+
+          li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+             
+          }
+
+          li a:hover {
+            background-color: #111;
+          }
+          a:hover {
+  color:palegoldenrod;
+  text-decoration: none;
+}
+      </style>
+      
+      <ul class='ull'>
+        <li><a class="active" href="{% url 'log' %}">HOME</a></li>
+        <li><a href="#">LIFE</a></li>
+        <li><a href="#">HEALTH</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li style="float:right"><a href="{% url 'login' %}">Log In</a></li> 
+        <li style="float:right"><a href="{% url 'signup' %}">Signup</a></li>
+      </ul>
+     
+        <div class="chat-container">
+        </div>
+          <script>!(function () {
+            // console.log('{{uid}}');
+            let e = document.createElement("script"),
+              t = document.head || document.getElementsByTagName("head")[0];
+              localStorage.clear();
+             (e.src =
+              "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"),
+              // Replace 1.x.x with the version that you want
+              (e.async = !0),
+              (e.onload = () => {
+                window.WebChat.default(
+                  {
+                    customData: { language: "en","userid":'{{uid}}',"name":'{{name}}',"utoken":'{{utoken}}'},
+                    socketUrl: "http://localhost:5005/",
+                    socketPath: "/socket.io/",
+                    title: "Sheba",
+                    //subtitle: "Enter hi to start",
+                    initPayload: "/greet",
+                    hideWhenNotConnected:false,
+                    storage: "session",
+                    badge:"https://cdn.discordapp.com/attachments/842313533185327118/889897051461144646/sheba_chat_avtar.png" ,
+                    profileAvatar:"https://cdn.discordapp.com/attachments/842313533185327118/889897051461144646/sheba_chat_avtar.png" ,
+                    // profileAvatar: "https://media.istockphoto.com/vectors/-vector-id1010001882?k=20&m=1010001882&s=612x612&w=0&h=6ZqzWlYBD3bT2EqJolzC3xbIKVVy350qMQmmS6B-Wd4=", 
+                    showMessageDate:true ,
+                    params: { profileAvatar: { dims: { width: 100,  height: 100  } } }
+                                        // add other props here
+                  },
+                  
+                            
+                  null
+                );
+              }),
+              t.insertBefore(e, t.firstChild);
+          })();
+          </script>
+
+          <script>
+          //   const observer = new MutationObserver((mutations, obs) => {
+          //   const hello = document.getElementsByClassName('rw-sender')[0];
+          //   if (hello) {
+          //     let mikeImg= document.createElement("img");
+          //     mikeImg.id="mike";
+          //     mikeImg.href="https://cdn.discordapp.com/attachments/842313533185327118/889897051461144646/sheba_chat_avtar.png";
+          //     console.log("app");
+          //     hello.appendChild(mikeImg);
+
+          //     return;
+          //   }
+          // });
+
+          // observer.observe(document.getElementsByClassName("rw-launcher")[0], {
+          //   childList: true,
+          //   subtree: false
+          // });
+          </script>
+
+          <script>
+            // var recognition = new webkitSpeechRecognition();
+
+            // recognition.continuous = false;
+            // recognition.interimResults = false;
+
+            // recognition.lang = "en-US";
+
+            // function startDictation() {
+
+            //     recognition.start();
+
+            // }
+            // recognition.onresult = function(e) {
+            //       document.getElementById('input_box').value = e.results[0][0].transcript;
+            //       recognition.stop();
+
+            // }
+            // recognition.onerror = function(e) {
+            //       recognition.stop();
+            //     }
+             
+                // addNew.setAttributeNode(newAttr);
+
+                // function btnFuncNew()
+                // {
+                //         let addNew= document.createElement("div");
+                //         document.body.appendChild(addNew);
+                //         addNew.innerHTML="HEY";
+                //         addNew.id="newDiv";
+                //         addNew.title="newTitle";
+                // }
+
+                // <form class="rw-sender"><textarea type="text" class="rw-new-message" name="message" placeholder="Type a message..." autocomplete="off" style="height: 20px;"></textarea><button type="submit" class="rw-send"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" enable-background="new 0 0 535.5 535.5" version="1.1" viewBox="0 0 535.5 535.5" xml:space="preserve"><path class="rw-send-icon-ready" d="M0 497.25L535.5 267.75 0 38.25 0 216.75 382.5 267.75 0 318.75z"></path></svg></button></form>
+                // function func()
+                // {
+                //   document.getElementsByName("message").innerHTML= "LLLLLLL";
+                // }
+
+                // let launcher=document.getElementsByName("message").addEventListener("click", func);
+
+
+                // let textForm= document.getElementsByClassName("rw-sender");
+                // let mikeImg= document.createElement("img");
+                // mikeImg.id="mike";
+                // mikeImg.href="https://cdn.discordapp.com/attachments/842313533185327118/889897051461144646/sheba_chat_avtar.png";
+                // // let mike=document.createAttribute("button");
+                // // mike.id="mike";
+                // // mike.appendChild(mikeImg);
+                // // textForm.appendChild(mikeImg);
+
+                // const para = document.createElement("p");
+                // const node = document.createTextNode("This iw.");
+                // para.appendChild(node);
+
+
+                // let a = document.getElementsByClassName("rw-sender");
+                // console.log(a);
+
+          </script>
+
+        <br> 
+        
+       
+      </body>
+</html>

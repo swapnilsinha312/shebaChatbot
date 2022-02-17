@@ -1,0 +1,96 @@
+version: "2.0"
+
+rules:
+# - action_life_regexandstore_slots
+# - action_life_get_user_data
+# - action_life_calc_suggest_hvl
+# - validate_life_client_life_info_form
+# - action_life_update_slots
+# - action_life_utter_policy_suggestion
+
+- rule: user wants to terminate
+  steps:
+  - intent: user_terminate
+  - action: utter_user_terminate
+  - action: action_restart
+
+- rule: Activate client_life_info_form
+  steps:
+  - intent: life
+  - action: action_life_get_user_data
+  - action: client_life_info_form
+  - active_loop: client_life_info_form
+
+- rule: Activate client_health_info_form
+  steps:
+  - intent: health
+  - action: action_health_get_user_data
+  - action: client_health_info_form
+  - active_loop: client_health_info_form
+
+- rule: Submit client_life_info_form
+  condition:
+  - active_loop: client_life_info_form
+  steps:
+  - action: client_life_info_form
+  - active_loop: null
+  - action: action_life_regexandstore_slots 
+  - action: action_life_next_action
+
+- rule: Submit client_health_info_form
+  condition:
+  - active_loop: client_health_info_form
+  steps:
+  - action: client_health_info_form
+  - active_loop: null
+  - action: action_health_regexandstore_slots 
+  - action: action_health_next_action
+
+- rule: show user data life
+  steps:
+  - intent: show_data_life
+  - action: utter_life_data
+  - action: action_restart
+
+- rule: show user data health
+  steps:
+  - intent: show_data_health
+  - action: utter_health_data
+  - action: action_restart 
+
+# - rule: suggest life
+#   steps:
+#   - intent: give_suggestion_life
+#   - action: utter_life_slots_value
+#   - action: action_life_utter_policy_suggestion
+#   - action: action_restart
+
+# - rule: suggest health
+#   steps:
+#   - intent: give_suggestion_health
+#   - action: action_health_utter_policy_suggestion
+#   - action: action_restart
+
+- rule: update_life
+  steps:
+  - intent: update_life
+  - action: action_life_update_slots
+  - action: utter_user_update
+  - action: client_life_info_form
+  - active_loop: client_life_info_form
+
+- rule: update_health
+  steps:
+  - intent: update_health
+  - action: action_health_update_slots
+  - action: utter_user_update
+  - action: client_health_info_form
+  - active_loop: client_health_info_form
+
+- rule: policy suggestion
+  steps:
+  - intent: give_suggestion
+  - action: action_life_pred_get_user_data
+  - action: action_health_pred_get_user_data
+  - action: action_utter_policy_suggestion
+  - action: action_restart

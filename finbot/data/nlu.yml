@@ -1,0 +1,232 @@
+version: "2.0"
+
+# confirm_proceed
+# age
+# employement_status
+# annual_income
+# marital_status
+# number_of_dependents
+
+nlu:
+
+- intent: greet
+  examples: |
+    - Proceed
+    - roceed
+    - Poceed
+    - Prceed
+    - Proeed
+    - Proced
+    - Procee
+    - proceed
+    - Move on
+    - Move forward
+    - Go ahead
+    - To infinity and beyond
+    - Sheeba
+    - sheeba
+    - Sheebaa
+    - Sheeb'
+    - sheebal
+    - heeba
+    - Seeba
+    - Sheba
+    - Sheea
+    - Sheeb
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+ 
+- intent: affirm
+  examples: |
+    - sy
+    - ye
+    - ofcourse
+    - indeed
+    - of course
+    - correct
+    - sure
+    - ok
+    - why not
+    - ok great
+    - fine 
+    - pretty good
+    - okay
+
+- intent: deny
+  examples: |
+    - no 
+    - never
+    - I dont think so
+    - dont like that
+    - not really 
+    - no way
+    - no thanks
+    - did't do any
+    - could have been better
+
+- intent: user_terminate
+  examples: |
+    - stop
+    - terminate
+    - dont want to go ahead
+    - end
+    - finish 
+
+- intent: update_values
+  examples: |
+    - update
+    - i want to change data
+    - want to update information
+    - wish to update information
+    - change data
+
+# - intent: deny_married
+#   examples: |
+#     - no 
+#     - never
+#     - I dont think so
+#     - dont like that
+#     - not really 
+#     - no way
+#     - no thanks
+#     - did't do any
+#     - could have been better
+#     - I am single 
+#     - Not a settling person 
+#     - Not yet 
+
+# - intent: affirm_married
+#   examples: |
+#     - yes
+#     - y
+#     - yeah
+#     - indeed
+#     - of course
+#     - correct
+#     - sure
+#     - ok
+#     - ok great
+#     - fine 
+#     - I am married
+#     - Got a wife 
+#     - Got a husband
+#     - Have a family
+#     - Tied the knot 
+#     - 10 years and counting  
+
+# - intent: affirm_employed
+#   examples: |
+#     - i am currently employed
+#     - i am currently working 
+#     - yes
+#     - true
+#     - yes i work
+#     - yes i am employed
+#     - yes i am working
+
+# - intent: deny_employed
+#   examples: |
+#     - no i am not currently employed
+#     - no i am not currently working 
+#     - no
+#     - nope
+#     - no i am unemployed
+#     - no i am not working
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: out_of_scope
+  examples: |
+    - that's not what i want to do
+    - wait stop
+    - you are no help
+    - how old are you
+    - i wanna order a pizza
+    - this isnt working
+    - tell me the weather
+    - i dont want to tell you that
+    - stop asking 
+    - nevermind
+    - i want to do something else
+    - i changed my mind
+
+- intent: thankyou
+  examples: |
+    - thanks
+    - okay great thank you
+    - thanks bye
+    - sure thanks
+
+- intent: inform
+  examples: |
+    - I am 18 years old 
+    - I am 21 years old
+    - 24 years 
+    - 32 years
+    - 57 years 
+    - I earn 10000 annually 
+    - I am paid 23456234 rupees every year 
+    - I make 1000 rupees
+    - 5000 rupees annual 
+    - 10K yearly
+    - 10G annual 
+    - 100000.00 rupees
+    - I have 3 family members 
+    - I have 3 family members 
+    - 3 members 
+    - 4 in the house 
+    - 5
+
+- intent: greet_db
+  examples: |
+    - database
+    - get data
+    - db
+    - use db
+# - intent: ask_eligible_age  
+#   examples: |
+#     - What is the eligible age to buy health insurance?
+                
+
+
+# You can buy Individual Health Insurance Plan, Family Floater Health Insurance Plan, Senior Citizen Health Insurance Plan, Critical Illness Insurance Plan, Maternity Health Insurance Plan, Group Health Insurance Plan, Personal Accident Insurance Plan.
+
+
+# While eligibility age for health insurance policies differs, the general eligibility age for adults ranges between 18 years up to 65 years. The eligibility age for children lies between 90 days up to 18 years.
+
+# Yes! Buying health insurance will earn you the eligibility to claim tax benefits under Section 80D of the Income Tax Act, 1961.
+
+# If you have already been diagnosed with a medical condition, it will be considered a pre-existing disease. In this case, you may have to wait for a specific period (waiting period) until allowed coverage. Based on your insurer, you may be required to pay a higher premium or face policy denial.
+
+# If you want to buy health insurance, you need to submit the documents like aadhaar card, voter ID, driving license, and pre-medical check-up report (in some cases). The documents are required for age proof, identity proof, address proof, and medical check-up
+# What documents do I need if I want to buy health insurance?
