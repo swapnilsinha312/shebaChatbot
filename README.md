@@ -4,7 +4,7 @@
  >Key Features
 <ul>
 <li>
-Created a chatbot capable of performing financial need analysis.
+Chatbot capable of performing financial need analysis.
 </li>
 <li>
 Aimed at providing assitance to customers looking for an appropriate insurance cover. 
