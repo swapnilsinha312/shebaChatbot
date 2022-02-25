@@ -1,7 +1,8 @@
-<h1>shebaChatbot</h1>
+<h1>Sheba Chatbot</h1>
 <h5 align=right> Python, Django, Rasa, Firebase</h5>
  An insuarance analysis chatbot using Rasa open source framework, Django and Firebase
  
+ <br>
  >Key Features
 <ul>
 <li>
