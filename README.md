@@ -1,4 +1,5 @@
-# shebaChatbot
+<h1>shebaChatbot</h1>
+<h5 align=right> Python, Django, Rasa, Firebase</h5>
  An insuarance analysis chatbot using Rasa open source framework, Django and Firebase
  
  >Key Features
@@ -10,7 +11,10 @@ Chatbot capable of performing financial need analysis.
 Aimed at providing assitance to customers looking for an appropriate insurance cover. 
 </li>
 <li>
-Full tech stack implementation with web based UI. • Rasa (Python) – Chatbot framenwork 
+Full tech stack implementation with web based UI. 
+</li>
+ <li>
+ Rasa (Python) – Chatbot framenwork 
 </li>
  <li>
 Firebase – Database
