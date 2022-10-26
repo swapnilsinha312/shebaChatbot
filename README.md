@@ -26,7 +26,8 @@ Firebase – Database
 Django – Front end
 </li>
 
-<h4>Screenshots
+ <h4>Screenshots</h4>
+ 
 ![Sample 1](https://user-images.githubusercontent.com/54933414/197963438-54381cc3-62f4-4e52-a5a5-f67d3e5b5595.png)
 ![Sample 2](https://user-images.githubusercontent.com/54933414/197963539-57d984e8-695f-4060-a4ba-be73296f917d.png)
 ![Sample 3](https://user-images.githubusercontent.com/54933414/197963589-cda15e49-a7b0-45d6-8024-d809919dd0d4.png)
