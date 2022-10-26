@@ -25,6 +25,8 @@ Firebase – Database
  <li>
 Django – Front end
 </li>
+</ul>
+
 <br>
 
 >Screenshots
